@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Milo McDonald | Ballet &amp; Musical Theatre Portfolio</title>
+<meta name="description" content="Ballet dancer, actor, and vocalist portfolio for college and conservatory applications.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#faf6f0;
+    --cream-2:#f2ebe1;
+    --charcoal:#241f1d;
+    --blush:#d9a6a0;
+    --blush-deep:#c07f79;
+    --gold:#b08d57;
+    --line:#e4d9cc;
+    --text:#3a332f;
+    --text-soft:#6b615a;
+    --max:1120px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Jost',sans-serif;
+    color:var(--text);
+    background:var(--cream);
+    line-height:1.65;
+    font-weight:300;
+  }
+  h1,h2,h3,.display{
+    font-family:'Playfair Display',serif;
+    font-weight:600;
+    color:var(--charcoal);
+    letter-spacing:.01em;
+  }
+  .script{
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;
+    font-weight:500;
+  }
+  a{color:inherit;text-decoration:none;}
+  img{max-width:100%;display:block;}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 32px;}
+  section{padding:110px 0;}
+  .eyebrow{
+    text-transform:uppercase;
+    letter-spacing:.28em;
+    font-size:12px;
+    color:var(--blush-deep);
+    font-weight:500;
+    margin-bottom:14px;
+  }
+  h2.section-title{font-size:clamp(28px,4vw,42px);margin-bottom:20px;}
+  .section-lead{max-width:620px;color:var(--text-soft);font-size:17px;margin-bottom:56px;}
+  .placeholder{
+    background:repeating-linear-gradient(135deg,#efe4d6,#efe4d6 10px,#e8dbc9 10px,#e8dbc9 20px);
+    border:1px dashed var(--gold);
+    border-radius:2px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    color:#8a7a5f;
+    font-size:13px;
+    font-family:'Jost',sans-serif;
+    letter-spacing:.03em;
+    padding:20px;
+  }
+
+  /* NAV */
+  header{
+    position:fixed;top:0;left:0;right:0;z-index:100;
+    background:rgba(250,246,240,.92);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--line);
+  }
+  nav.wrap{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:18px 32px;
+  }
+  .brand{font-family:'Playfair Display',serif;font-weight:700;font-size:19px;letter-spacing:.03em;}
+  .brand span{color:var(--blush-deep);}
+  .nav-links{display:flex;gap:34px;list-style:none;}
+  .nav-links a{
+    font-size:13px;text-transform:uppercase;letter-spacing:.14em;
+    color:var(--text);position:relative;padding-bottom:4px;
+  }
+  .nav-links a:hover{color:var(--blush-deep);}
+  .nav-toggle{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:6px;}
+  .nav-toggle span{width:22px;height:2px;background:var(--charcoal);display:block;}
+
+  /* HERO */
+  .hero{
+    padding:190px 0 100px;
+    display:grid;
+    grid-template-columns:1.05fr .95fr;
+    gap:60px;
+    align-items:center;
+  }
+  .hero .eyebrow{margin-bottom:18px;}
+  .hero h1{font-size:clamp(38px,6vw,64px);line-height:1.08;margin-bottom:22px;}
+  .hero h1 em{font-style:italic;color:var(--blush-deep);}
+  .hero p.role-line{
+    font-size:18px;color:var(--text-soft);margin-bottom:34px;
+    font-family:'Cormorant Garamond',serif;font-style:italic;font-size:22px;
+  }
+  .btn-row{display:flex;gap:16px;flex-wrap:wrap;}
+  .btn{
+    display:inline-block;padding:14px 30px;font-size:13px;letter-spacing:.12em;
+    text-transform:uppercase;border-radius:1px;transition:.2s;
+  }
+  .btn-primary{background:var(--charcoal);color:var(--cream);}
+  .btn-primary:hover{background:var(--blush-deep);}
+  .btn-outline{border:1px solid var(--charcoal);}
+  .btn-outline:hover{border-color:var(--blush-deep);color:var(--blush-deep);}
+  .hero-photo{aspect-ratio:4/5;}
+
+  /* ABOUT */
+  .about-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:56px;align-items:start;}
+  .about-photo{aspect-ratio:3/4;}
+  .facts{
+    display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:34px;
+  }
+  .fact{
+    border-top:1px solid var(--line);padding-top:12px;
+  }
+  .fact .label{font-size:11px;text-transform:uppercase;letter-spacing:.14em;color:var(--blush-deep);margin-bottom:4px;}
+  .fact .value{font-size:15px;}
+
+  /* BALLET (primary section) */
+  #ballet{background:var(--charcoal);color:var(--cream-2);}
+  #ballet h2.section-title{color:var(--cream);}
+  #ballet .eyebrow{color:var(--blush);}
+  #ballet .section-lead{color:#c7bdb2;}
+  .style-tags{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:60px;}
+  .style-tag{
+    border:1px solid #4a423c;padding:10px 20px;font-size:13px;letter-spacing:.06em;
+    border-radius:30px;color:var(--cream-2);
+  }
+  .two-col{display:grid;grid-template-columns:1fr 1fr;gap:60px;}
+  .subhead{font-size:20px;color:var(--gold);margin-bottom:20px;font-family:'Playfair Display',serif;}
+  .timeline-item{
+    border-bottom:1px solid #3a332f;padding:18px 0;
+    display:grid;grid-template-columns:90px 1fr;gap:20px;
+  }
+  .timeline-item:last-child{border-bottom:none;}
+  .timeline-item .yr{color:var(--gold);font-size:14px;letter-spacing:.05em;}
+  .timeline-item .prog{font-size:16px;color:var(--cream);margin-bottom:4px;}
+  .timeline-item .loc{font-size:13px;color:#a89e93;}
+  .timeline-item .prog-entry{margin-bottom:16px;}
+  .timeline-item .prog-entry:last-child{margin-bottom:0;}
+  .rep-list{list-style:none;}
+  .rep-list li{
+    padding:14px 0;border-bottom:1px solid #3a332f;font-size:15px;color:var(--cream-2);
+  }
+  .rep-list li .role{color:var(--gold);font-family:'Cormorant Garamond',serif;font-style:italic;font-size:17px;}
+  .gallery-grid{
+    display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:60px;
+  }
+  .gallery-grid .placeholder{aspect-ratio:3/4;}
+  .video-embed{
+    aspect-ratio:16/9;margin-top:50px;
+  }
+
+  /* MUSICAL THEATRE */
+  .mt-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;}
+  .card{
+    background:var(--cream-2);border:1px solid var(--line);padding:34px;border-radius:2px;
+  }
+  .card h3{font-size:19px;margin-bottom:14px;}
+  .card ul{padding-left:18px;color:var(--text-soft);font-size:15px;}
+  .card ul li{margin-bottom:8px;}
+  .comp-list{list-style:none;margin-top:10px;}
+  .comp-list li{
+    display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid var(--line);font-size:15px;
+  }
+  .comp-list li span.tag{color:var(--blush-deep);font-size:12px;text-transform:uppercase;letter-spacing:.08em;}
+
+  /* SKILLS STRIP */
+  .skills-strip{
+    display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);
+    border:1px solid var(--line);margin-top:20px;
+  }
+  .skill-cell{background:var(--cream);padding:30px 20px;text-align:center;}
+  .skill-cell .n{font-family:'Playfair Display',serif;font-size:15px;margin-bottom:6px;}
+  .skill-cell .d{font-size:13px;color:var(--text-soft);}
+
+  /* CONTACT */
+  #contact{background:var(--cream-2);}
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;}
+  .contact-list{list-style:none;margin-top:24px;}
+  .contact-list li{padding:14px 0;border-bottom:1px solid var(--line);font-size:16px;}
+  .contact-list li .label{display:block;font-size:11px;text-transform:uppercase;letter-spacing:.14em;color:var(--blush-deep);margin-bottom:3px;}
+
+  footer{
+    padding:36px 0;text-align:center;font-size:13px;color:var(--text-soft);
+    border-top:1px solid var(--line);
+  }
+
+  @media (max-width:860px){
+    .nav-links{
+      position:fixed;top:64px;left:0;right:0;bottom:0;background:var(--cream);
+      flex-direction:column;padding:40px 32px;gap:26px;transform:translateX(100%);
+      transition:.25s;
+    }
+    .nav-links.open{transform:translateX(0);}
+    .nav-toggle{display:flex;}
+    .hero,.about-grid,.two-col,.mt-grid,.contact-grid{grid-template-columns:1fr;}
+    .hero-photo,.about-photo{order:-1;height:340px;}
+    .gallery-grid{grid-template-columns:repeat(2,1fr);}
+    .skills-strip{grid-template-columns:repeat(2,1fr);}
+    section{padding:80px 0;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="wrap">
+    <div class="brand">Milo McDonald<span>.</span></div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about">About</a></li>
+      <li><a href="#ballet">Dance</a></li>
+      <li><a href="#musical-theatre">Musical Theatre</a></li>
+      <li><a href="#training">Training</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero wrap" id="top">
+  <div>
+    <div class="eyebrow">Dance &middot; Musical Theatre &middot; College Portfolio</div>
+    <h1>Milo McDonald<br><em>Dancer, Actor &amp; Vocalist</em></h1>
+    <p class="role-line">A classically trained dancer and triple-threat performer &mdash; dance, voice, and stage.</p>
+    <div class="btn-row">
+      <a href="#ballet" class="btn btn-primary">View Dance Work</a>
+      <a href="#" class="btn btn-outline">Download Resume (PDF)</a>
+    </div>
+  </div>
+  <div class="placeholder hero-photo">[ Add full-length dance photo here &mdash; e.g. arabesque or pointe work, high resolution, vertical orientation ]</div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="wrap about-grid">
+    <div class="placeholder about-photo">[ Add headshot or candid studio photo ]</div>
+    <div>
+      <div class="eyebrow">About</div>
+      <h2 class="section-title">Meet Milo</h2>
+      <p style="color:var(--text-soft);font-size:16px;">
+        Milo McDonald is a 15-year-old rising sophomore and versatile triple-threat performer from Ashland, Ohio.
+         He trains with Marden Ramos and Sarah Horrigan-Ramos at Richland Academy and has participated in ballet intensives
+          with BalletMet and Tulsa Ballet. Drawn to the combination of movement, music, and storytelling, Milo performs across 
+          dance, musical theater, voice, and acting. He is a strong tenor, advanced pianist and stand-up bassist, and fluent Spanish speaker.
+      </p>
+      <div class="facts">
+        <div class="fact"><div class="label">Primary Discipline</div><div class="value">Classical Ballet</div></div>
+        <div class="fact"><div class="label">Also Trained In</div><div class="value">Tap, Modern, Jazz, Lyrical</div></div>
+        <div class="fact"><div class="label">Languages</div><div class="value">English, Spanish</div></div>
+        <div class="fact"><div class="label">Instruments</div><div class="value">Piano, Upright Bass</div></div>
+        <div class="fact"><div class="label">Grade / Year</div><div class="value">Sophomore, Class of 2029</div></div>
+        <div class="fact"><div class="label">Home Studio</div><div class="value">Richland Academy of the Arts</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Dance (primary focus) -->
+<section id="ballet">
+  <div class="wrap">
+    <div class="eyebrow">Primary Focus</div>
+    <h2 class="section-title">Dance</h2>
+    <p class="section-lead">
+      Milo's dance training is rooted in classical ballet and spans tap, jazz, modern, lyrical, acrobatics, and musical-theater dance. 
+      He is drawn to movement that combines technical precision, musicality, athleticism, and storytelling. He approaches dance not 
+      simply as a series of steps, but as a way to communicate character, emotion, and individuality.
+    </p>
+
+    <div class="style-tags">
+      <div class="style-tag">Classical Ballet</div>
+      <div class="style-tag">Tap</div>
+      <div class="style-tag">Modern</div>
+      <div class="style-tag">Lyrical</div>
+      <div class="style-tag">Jazz</div>
+      <div class="style-tag">Partnering</div>
+    </div>
+
+    <div class="two-col">
+      <div>
+        <div class="subhead">Summer Intensives Attended</div>
+        <div class="timeline-item">
+          <div class="yr">2026</div>
+          <div>
+            <div class="prog">Tulsa Ballet Summer Intensive</div>
+            <div class="loc">Tulsa, Oklahoma &mdash; 5-week program, Full Scholarship</div>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="yr">2025</div>
+          <div>
+            <div class="prog">BalletMet</div>
+            <div class="loc">Columbus, Ohio &mdash; 5-week program, Full Scholarship</div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="subhead">Repertoire &amp; Roles</div>
+        <ul class="rep-list">
+          <li><span class="role">Nutcracker</span> &mdash; The Prince, [ Richland Academy, 2025 ]</li>
+          <li><span class="role">Nutcracker</span> &mdash; Jester, [ Ashland Regional Ballet, 2024 ]</li>
+          <li><span class="role">Nutcracker</span> &mdash; Fritz, [ Ashland Regional Ballet, 2023 ]</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="placeholder video-embed">
+      [ Embed ballet performance reel here &mdash; replace this block with an &lt;iframe&gt; from YouTube/Vimeo,
+      or a direct &lt;video&gt; tag. Aim for 2&ndash;4 minutes of your strongest variations. ]
+    </div>
+
+    <div class="gallery-grid">
+      <div class="placeholder">[ Photo 1 ]</div>
+      <div class="placeholder">[ Photo 2 ]</div>
+      <div class="placeholder">[ Photo 3 ]</div>
+      <div class="placeholder">[ Photo 4 ]</div>
+    </div>
+  </div>
+</section>
+
+<!-- MUSICAL THEATRE -->
+<section id="musical-theatre">
+  <div class="wrap">
+    <div class="eyebrow">Triple Threat</div>
+    <h2 class="section-title">Musical Theatre: Acting &amp; Voice</h2>
+    <p class="section-lead">
+      Milo is a strong Baritenor with an expressive head voice and 10 years of vocal training, including classical technique with Lori Turner. 
+      He has performed in more than 30 productions and enjoys roles that combine humor, vulnerability, physicality, and strong storytelling. 
+      His musical background includes advanced piano, stand-up bass, and perfect pitch.
+    </p>
+
+    <div class="mt-grid">
+      <div class="card">
+        <h3>Performance Highlights</h3>
+        <ul>
+          <li>Music Man &mdash; Winthrop Paroo, Renaissance Theatre, 2022</li>
+          <li>Newsies Jr. &mdash; Jack Kelly, Renaissance Theatre, 2026</li>
+          <li>Cinderella Jr. &mdash; Prince Christopher, Caryl Crane Youth Theatre, 2025</li>
+          <li>Peter Pan Jr. &mdash; Peter Pan, Mansfield Playhouse, 2024</li>
+        </ul>
+        <h3 style="margin-top:26px;">Vocal Details</h3>
+        <ul>
+          <li>Voice type: Baritenor </li>
+          <li>Range: E2&ndash;B5
+          <li>Perfect Pitch
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Competitions &amp; Awards</h3>
+        <ul class="comp-list">
+          <li>MTCA 2025 <span class="tag">1st Place Team Placement Overall</span></li>
+          <li>MTC Triple Threat San Diego 2025 <span class="tag">1st Place Overall Duet</span></li>
+          <li>MTCA 2026 <span class="tag">3rd Place Vocal Solo</span></li>
+          <li>NYTE 2026 <span class="tag">Allstar Performance</span></li>
+          <li>Solo & Ensemble 2026 <span class="tag">Class B Rating of 1</span></li>
+          <li>Solo & Ensemble 2024 <span class="tag">Class C Rating of 1</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="placeholder video-embed">
+      [ Embed a vocal/acting reel or monologue + song clip here ]
+    </div>
+
+    <div class="subhead" style="margin-top:60px;">Additional Skills</div>
+    <div class="skills-strip">
+      <div class="skill-cell"><div class="n">Piano</div><div class="d">11 years</div></div>
+      <div class="skill-cell"><div class="n">Upright Bass</div><div class="d">6 years</div></div>
+      <div class="skill-cell"><div class="n">Creative Writing</div><div class="d">1st place&mdash;Mind Sprouts Youth Writing Competition</div></div>
+      <div class="skill-cell"><div class="n">Choreography</div><div class="d"></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- TRAINING / RESUME -->
+<section id="training">
+  <div class="wrap">
+    <div class="eyebrow">Background</div>
+    <h2 class="section-title">Training &amp; Resume</h2>
+    <p class="section-lead">A full performance resume is available for download &mdash; including formal training history, coaches, and complete production credits.</p>
+    <div class="two-col">
+      <div>
+        <div class="subhead">Formal Training</div>
+        <div class="timeline-item">
+          <div class="yr">Dance<br>2019&ndash;present</div>
+          <div>
+            <div class="prog-entry"><div class="prog">Richland Academy of the Arts</div><div class="loc">Instructors: Sarah Horrigan-Ramos, Marden Ramos, Erin Wolford <br> Disciplines: Ballet, Tap, Modern, Jazz, Lyrical, Partnering</div></div>
+            <div class="prog-entry"><div class="prog">Opus II Dance Studio/Ashland Regional Ballet</div><div class="loc">Instructors: Anne Marie Benchoff, Sarah Cyder <br> Disciplines: Ballet, Tap, Modern, Jazz, Partnering</div></div>
+            <div class="prog-entry"><div class="prog">Studio 65 Dance Complex</div><div class="loc">Instructors: Allie Nichols, Maria Gallo, Allison Gazafy <br> Disciplines: Acrobatics, Tap, Hip-Hop</div></div>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="yr">Voice<br>2016&ndash;present</div>
+          <div>
+            <div class="prog-entry"><div class="prog">Craig Green</div><div class="loc">4 years: Musical Theatre</div></div>
+            <div class="prog-entry"><div class="prog">Jen Arbaugh</div><div class="loc">10 years: Vocal Control</div></div>
+            <div class="prog-entry"><div class="prog">Lori Turner</div><div class="loc">0 years: Classical Operatic Training</div></div>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="yr">Piano<br>2015&ndash;present</div>
+          <div>
+            <div class="prog-entry"><div class="prog">Jen Arbaugh</div><div class="loc">11 years: Classical Training</div></div>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="yr">Bass<br>2020&ndash;present</div>
+          <div>
+            <div class="prog-entry"><div class="prog">Ashland City Schools Orchestra</div><div class="loc">6 years: Classical Bass Training</div></div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="subhead">Resume</div>
+        <p style="color:var(--text-soft);font-size:15px;margin-bottom:24px;">Upload a PDF resume and link it below, or replace with an embedded resume image.</p>
+        <a href="#" class="btn btn-primary">Download Full Resume (PDF)</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery" style="background:var(--cream-2);">
+  <div class="wrap">
+    <div class="eyebrow">Media</div>
+    <h2 class="section-title">Gallery</h2>
+    <p class="section-lead">A mix of performance and studio photography across dance and musical theatre.</p>
+    <div class="gallery-grid">
+      <div class="placeholder">[ Photo ]</div>
+      <div class="placeholder">[ Photo ]</div>
+      <div class="placeholder">[ Photo ]</div>
+      <div class="placeholder">[ Photo ]</div>
+      <div class="placeholder">[ Photo ]</div>
+      <div class="placeholder">[ Photo ]</div>
+      <div class="placeholder">[ Photo ]</div>
+      <div class="placeholder">[ Photo ]</div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="wrap contact-grid">
+    <div>
+      <div class="eyebrow">Get In Touch</div>
+      <h2 class="section-title">Contact</h2>
+      <p style="color:var(--text-soft);font-size:16px;">For audition inquiries, program information, or letters of recommendation, please reach out directly.</p>
+      <ul class="contact-list">
+        <li><span class="label">Email</span>[ student email or parent/guardian email ]</li>
+        <li><span class="label">Phone</span>[ optional ]</li>
+        <li><span class="label">Location</span>[ City, State ]</li>
+        <li><span class="label">Instagram</span>[ @handle, optional ]</li>
+      </ul>
+    </div>
+    <div class="placeholder" style="aspect-ratio:4/3;">[ Optional final photo or quote ]</div>
+  </div>
+</section>
+
+<footer>
+  &copy; <span id="year"></span> Milo McDonald. Portfolio built for college &amp; conservatory applications.
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+  const toggle = document.getElementById('navToggle');
+  const links = document.getElementById('navLinks');
+  toggle.addEventListener('click', () => links.classList.toggle('open'));
+  links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => links.classList.remove('open')));
+</script>
+
+</body>
+</html>
