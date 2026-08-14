@@ -151,6 +151,14 @@
   .timeline-item .loc{font-size:13px;color:#a89e93;}
   .timeline-item .prog-entry{margin-bottom:16px;}
   .timeline-item .prog-entry:last-child{margin-bottom:0;}
+  .training-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:20px;}
+  .training-card .train-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:4px 12px;margin-bottom:18px;border-bottom:1px solid var(--line);padding-bottom:14px;}
+  .training-card .train-head h3{font-family:'Playfair Display',serif;font-size:20px;color:var(--charcoal);}
+  .training-card .train-head .train-years{font-size:13px;color:var(--gold);letter-spacing:.05em;}
+  .training-card .prog-entry{margin-bottom:16px;}
+  .training-card .prog-entry:last-child{margin-bottom:0;}
+  .training-card .prog{font-size:15px;color:var(--charcoal);margin-bottom:4px;font-weight:600;}
+  .training-card .loc{font-size:13px;color:var(--text-soft);line-height:1.6;}
   .rep-list{list-style:none;}
   .rep-list li{
     padding:14px 0;border-bottom:1px solid #3a332f;font-size:15px;color:var(--cream-2);
@@ -167,7 +175,7 @@
   /* MUSICAL THEATRE */
   .mt-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;}
   .card{
-    background:var(--cream-2);border:1px solid var(--line);padding:34px;border-radius:2px;
+    background:var(--cream-2);border:1px solid var(--line);padding:34px;border-radius:2px;min-width:0;
   }
   .card h3{font-size:19px;margin-bottom:14px;}
   .card ul{padding-left:18px;color:var(--text-soft);font-size:15px;}
@@ -207,7 +215,7 @@
     }
     .nav-links.open{transform:translateX(0);}
     .nav-toggle{display:flex;}
-    .hero,.about-grid,.two-col,.mt-grid,.contact-grid{grid-template-columns:1fr;}
+    .hero,.about-grid,.two-col,.mt-grid,.contact-grid,.training-grid{grid-template-columns:1fr;}
     .hero-photo,.about-photo{order:-1;height:340px;}
     .gallery-grid{grid-template-columns:repeat(2,1fr);}
     .skills-strip{grid-template-columns:repeat(2,1fr);}
@@ -393,44 +401,33 @@
     <div class="eyebrow">Background</div>
     <h2 class="section-title">Training &amp; Resume</h2>
     <p class="section-lead">A full performance resume is available for download &mdash; including formal training history, coaches, and complete production credits.</p>
-    <div class="two-col">
-      <div>
-        <div class="subhead">Formal Training</div>
-        <div class="timeline-item">
-          <div class="yr">Dance<br>2019&ndash;present</div>
-          <div>
-            <div class="prog-entry"><div class="prog">Richland Academy of the Arts</div><div class="loc">Instructors: Sarah Horrigan-Ramos, Marden Ramos, Erin Wolford <br> Disciplines: Ballet, Tap, Modern, Jazz, Lyrical, Partnering</div></div>
-            <div class="prog-entry"><div class="prog">Opus II Dance Studio/Ashland Regional Ballet</div><div class="loc">Instructors: Anne Marie Benchoff, Sarah Cyder <br> Disciplines: Ballet, Tap, Modern, Jazz, Partnering</div></div>
-            <div class="prog-entry"><div class="prog">Studio 65 Dance Complex</div><div class="loc">Instructors: Allie Nichols, Maria Gallo, Allison Gazafy <br> Disciplines: Acrobatics, Tap, Hip-Hop</div></div>
-          </div>
-        </div>
-        <div class="timeline-item">
-          <div class="yr">Voice<br>2016&ndash;present</div>
-          <div>
-            <div class="prog-entry"><div class="prog">Craig Green</div><div class="loc">4 years: Musical Theatre</div></div>
-            <div class="prog-entry"><div class="prog">Jen Arbaugh</div><div class="loc">10 years: Vocal Control</div></div>
-            <div class="prog-entry"><div class="prog">Lori Turner</div><div class="loc">0 years: Classical Operatic Training</div></div>
-          </div>
-        </div>
-        <div class="timeline-item">
-          <div class="yr">Piano<br>2015&ndash;present</div>
-          <div>
-            <div class="prog-entry"><div class="prog">Jen Arbaugh</div><div class="loc">11 years: Classical Training</div></div>
-          </div>
-        </div>
-        <div class="timeline-item">
-          <div class="yr">Bass<br>2020&ndash;present</div>
-          <div>
-            <div class="prog-entry"><div class="prog">Ashland City Schools Orchestra</div><div class="loc">6 years: Classical Bass Training</div></div>
-          </div>
-        </div>
+    <div class="subhead">Formal Training</div>
+    <div class="training-grid">
+      <div class="card training-card">
+        <div class="train-head"><h3>Dance</h3><span class="train-years">2019&ndash;present</span></div>
+        <div class="prog-entry"><div class="prog">Richland Academy of the Arts</div><div class="loc">Instructors: Sarah Horrigan-Ramos, Marden Ramos, Erin Wolford<br>Disciplines: Ballet, Tap, Modern, Jazz, Lyrical, Partnering</div></div>
+        <div class="prog-entry"><div class="prog">Opus II Dance Studio / Ashland Regional Ballet</div><div class="loc">Instructors: Anne Marie Benchoff, Sarah Cyder<br>Disciplines: Ballet, Tap, Modern, Jazz, Partnering</div></div>
+        <div class="prog-entry"><div class="prog">Studio 65 Dance Complex</div><div class="loc">Instructors: Allie Nichols, Maria Gallo, Allison Gazafy<br>Disciplines: Acrobatics, Tap, Hip-Hop</div></div>
       </div>
-      <div>
-        <div class="subhead">Resume</div>
-        <p style="color:var(--text-soft);font-size:15px;margin-bottom:24px;">Upload a PDF resume and link it below, or replace with an embedded resume image.</p>
-        <a href="#" class="btn btn-primary">Download Full Resume (PDF)</a>
+      <div class="card training-card">
+        <div class="train-head"><h3>Voice</h3><span class="train-years">2016&ndash;present</span></div>
+        <div class="prog-entry"><div class="prog">Craig Green</div><div class="loc">Discipline: Musical Theatre (4 years)</div></div>
+        <div class="prog-entry"><div class="prog">Jen Arbaugh</div><div class="loc">Discipline: Vocal Control (10 years)</div></div>
+        <div class="prog-entry"><div class="prog">Lori Turner</div><div class="loc">Discipline: Classical Operatic Training (New)</div></div>
+      </div>
+      <div class="card training-card">
+        <div class="train-head"><h3>Piano</h3><span class="train-years">2015&ndash;present</span></div>
+        <div class="prog-entry"><div class="prog">Jen Arbaugh</div><div class="loc">Discipline: Classical Training (11 years)</div></div>
+      </div>
+      <div class="card training-card">
+        <div class="train-head"><h3>Bass</h3><span class="train-years">2020&ndash;present</span></div>
+        <div class="prog-entry"><div class="prog">Ashland City Schools Orchestra</div><div class="loc">Instructor: [ Add instructor/director name ]<br>Discipline: Classical Bass Training (6 years)</div></div>
       </div>
     </div>
+
+    <div class="subhead" style="margin-top:60px;">Resume</div>
+    <p style="color:var(--text-soft);font-size:15px;margin-bottom:24px;">Upload a PDF resume and link it below, or replace with an embedded resume image.</p>
+    <a href="#" class="btn btn-primary">Download Full Resume (PDF)</a>
   </div>
 </section>
 
